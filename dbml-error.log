@@ -1,0 +1,53 @@
+2025-03-21T11:21:21.177Z
+TypeError [ERR_INVALID_URL]: Invalid URL
+    at new NodeError (node:internal/errors:405:5)
+    at new URL (node:internal/url:676:13)
+    at ConnectionConfig.parseUrl (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\connection_config.js:271:23)
+    at new ConnectionConfig (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\connection_config.js:76:34)
+    at createConnection (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\create_connection.js:7:35)
+    at createConnectionPromise (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\promise.js:18:26)
+    at connectMySQL (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:8:57)
+    at fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:366:26)
+    at Object.fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\connector.js:16:57)
+    at connectionHandler (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\lib\cli\connector.js:24:51)
+
+2025-03-21T11:24:44.346Z
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pk_fk_uniques as (
+        select constraint_name, table_name
+        from infor' at line 1
+    at PromiseConnection.query (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at generateIndexes (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:201:40)
+    at fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:375:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectionHandler (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\lib\cli\connector.js:24:24)
+
+2025-03-21T11:26:12.830Z
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pk_fk_uniques as (
+        select constraint_name, table_name
+        from infor' at line 1
+    at PromiseConnection.query (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at generateIndexes (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:201:40)
+    at fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:375:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectionHandler (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\lib\cli\connector.js:24:24)
+
+2025-03-21T11:27:01.223Z
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pk_fk_uniques as (
+        select constraint_name, table_name
+        from infor' at line 1
+    at PromiseConnection.query (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at generateIndexes (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:201:40)
+    at fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:375:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectionHandler (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\lib\cli\connector.js:24:24)
+
+2025-03-21T11:28:43.076Z
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pk_fk_uniques as (
+        select constraint_name, table_name
+        from infor' at line 1
+    at PromiseConnection.query (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at generateIndexes (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:201:40)
+    at fetchSchemaJson (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\node_modules\@dbml\connector\dist\connectors\mysqlConnector.js:375:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectionHandler (C:\Users\KIADY\AppData\Local\nvm\v18.20.7\node_modules\@dbml\cli\lib\cli\connector.js:24:24)
+

@@ -147,3 +147,4 @@
 <div class="col-lg-12">
     <input type="submit" value="{{$submitButtonText}}" class="btn btn-md btn-brand">
 </div>
+

@@ -69,7 +69,7 @@ services:
       context: .
       dockerfile: ./.docker/nginx/Dockerfile
     volumes:
-      - .docker/nginx/nginx-local.conf:/etc/nginx/nginx.conf
+      - .docker/nginx/nginx-local.conf:/etc/nginx/nginx.conf:ro
       - .:/var/www/html
     ports:
       - 80:80

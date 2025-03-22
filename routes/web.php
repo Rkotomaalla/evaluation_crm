@@ -9,6 +9,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+use App\Http\Controllers\UsersController;
+
 Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::group(['middleware' => ['auth']], function () {
@@ -31,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/calendar-users', 'UsersController@calendarUsers')->name('users.calendar');
     });
     Route::resource('users', 'UsersController');
+                                // ___________________________>route pour l importation de l users
+    Route::post('/users/import', [UsersController::class, 'import'])->name('users.import');
 
     /**
     * Roles

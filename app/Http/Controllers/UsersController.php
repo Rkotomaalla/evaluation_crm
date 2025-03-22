@@ -17,7 +17,9 @@ use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Imports\UserImport;
 use Ramsey\Uuid\Uuid;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UsersController extends Controller
 {
@@ -37,6 +39,50 @@ class UsersController extends Controller
     {
         return view('users.index')->withUsers(User::all());
     }
+
+
+    public function import(Request $request){
+
+         // Liste des types MIME autorisés
+            $mimes = [
+                'application/vnd.ms-excel', // Excel (ancienne version)
+                'text/plain',               // Texte brut
+                'text/csv',                 // CSV
+                'text/tsv'                  // TSV (Tab-separated values)
+            ];
+
+            // Récupération du fichier
+            $file = $request->file('file');
+
+            // Vérification du type MIME
+            if (!in_array($file->getMimeType(), $mimes)) {
+                return back()->with('error', 'Format de fichier non autorisé.');
+    }
+        try {
+            Excel::import(new UserImport, $file);
+    
+            return back()->with('success', 'Importation réussie !');
+        } catch (ValidationException $e) {
+            // Récupérer les erreurs de validation
+            $failures = $e->failures();
+            $errors = [];
+    
+            foreach ($failures as $failure) {
+                $errors[] = "Ligne " . $failure->row() . ": " . implode(', ', $failure->errors());
+            }
+    
+            // Stocker les erreurs en session
+            session()->flash('error', implode('<br>', $errors));
+    
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // Capturer toute autre erreur
+            session()->flash('error', __('Erreur lors de l’import : ') . $e->getMessage());
+            return redirect()->back();
+        }
+    }
+
+
 
     public function calendarUsers()
     {
