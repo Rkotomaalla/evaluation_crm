@@ -183,10 +183,11 @@ class PermissionsTableSeeder extends Seeder
         $assignNewUserLead->grouping = 'lead';
         $assignNewUserLead->save();
 
+        
         /**
         * Project Permission
         */
-        
+
         $createproject = new Permission;
         $createproject->display_name = 'Create project';
         $createproject->name = 'project-create';
@@ -221,6 +222,7 @@ class PermissionsTableSeeder extends Seeder
         $projectUploadFiles->description = 'Allowed to upload files for a project';
         $projectUploadFiles->grouping = 'project';
         $projectUploadFiles->save();
+
 
         Permission::firstOrCreate([
             'display_name' => 'Add payment',
@@ -308,5 +310,20 @@ class PermissionsTableSeeder extends Seeder
             'grouping' => 'offer',
         ]);
 
+        
+        // Permission invoice
+        Permission::firstOrCreate([
+            'display_name' => 'Create invoice',
+            'name' => 'invoice-create',
+            'description' => 'Be able to create an invoice',
+            'grouping' => 'invoice',
+        ]);
+
+        Permission::firstOrCreate([
+            'display_name' => 'Update invoice',
+            'name' => 'invoice-update',
+            'description' => 'Be able to update an invoice',
+            'grouping' => 'invoice',
+        ]);
     }
 }

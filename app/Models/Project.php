@@ -28,6 +28,7 @@ class Project extends model implements Commentable
         'user_created_id',
         'client_id',
         'deadline',
+        'invoice_id',
     ];
 
     protected $dates = ['deadline'];
@@ -102,6 +103,11 @@ class Project extends model implements Commentable
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'source');
+    }
+
+    public function invoice()
+    {
+        return $this->belongsTo(Invoice::class); 
     }
 
     public function getCreateCommentEndpoint(): String
